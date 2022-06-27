@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import User from "../user/user";
+import UserDetails from "../userDetails/userDetails";
 
 
 export default function Users (){
@@ -21,15 +22,9 @@ useEffect(()=> {
     return(
         <div>
 
-            {  user.id && <div>
-
-                <ol>
-                    <ul><b>Name:</b> {user.name} </ul>
-                    <ul><b>UserName:</b> {user.username}</ul>
-                    <ul><b>Address</b> {user.address.city} </ul>
-                </ol>
-
-                 </div>}
+            {  user.id && <UserDetails
+            user={user}
+            />}
 <h2>Users</h2>
             {users.map((user,index)=> <User
                 key={index} user={user}
